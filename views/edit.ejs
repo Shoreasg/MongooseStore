@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include ("partials/head") %>
+        <style>
+            input[type=text],
+            select {
+                display: list-item;
+
+            }
+        </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1>Edit Product</h1>
+        <form action="/products/<%=product._id%>?_method=PUT" method="POST">
+            <label for="name">Name of item:</label>
+            <input type="text" name="name" id="name" value=<%=product.name %> readonly style="background-color:
+            LightGray;"/>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" readonly style="background-color: LightGray;" rows="2"
+                cols="30"><%=product.description %></textarea>
+            <label for="qty">Stock:</label>
+            <input type="number" name="qty" id="qty" value=<%=product.qty %> min=0>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" value=<%=product.price %> min=0><br>
+            <input type="submit" value="Edit product" />
+        </form>
+    </div>>
+</body>
+
+
+</html>
